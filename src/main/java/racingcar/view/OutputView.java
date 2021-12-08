@@ -1,5 +1,7 @@
 package racingcar.view;
 
+import racingcar.model.Car;
+
 public class OutputView {
 
 	private static final String ASK_CAR_NAMES = "경주할 자동차 이름을 입력하세요.";
@@ -30,15 +32,21 @@ public class OutputView {
 		System.out.println();
 	}
 
-	public static void printPosition(int position) {
-		for (int i = STARTING_POSITION; i < position; i++) {
+	public static void printCarNameAndPosition(Car car) {
+		printCarNameAndColon(car);
+		printPosition(car);
+	}
+
+	private static void printPosition(Car car) {
+		for (int i = STARTING_POSITION; i < car.getPosition(); i++) {
 			System.out.print(POSITION_BAR);
 		}
 		printNewLine();
 	}
 
-	public static void printCarNameAndColon(String car) {
-		System.out.print(car + COLON_WITH_SPACE);
+	private static void printCarNameAndColon(Car car) {
+		System.out.print(car.getName() + COLON_WITH_SPACE);
+
 	}
 
 	public static void printExecutionResult() {
@@ -46,7 +54,7 @@ public class OutputView {
 		System.out.println(EXECUTION_RESULT);
 	}
 
-	public static void printWinner(String winner) {
-		System.out.print(FINAL_WINNER_IS + COLON_WITH_SPACE + winner);
+	public static void printWinner(String winnerName) {
+		System.out.print(FINAL_WINNER_IS + COLON_WITH_SPACE + winnerName);
 	}
 }
