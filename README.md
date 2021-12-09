@@ -41,7 +41,7 @@
 ### 프로그램 구조도
 
 ```
-baseball
+racingcar
   - controller
     - GameController
 
