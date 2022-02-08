@@ -3,6 +3,7 @@ package racingcar;
 import static org.assertj.core.api.Assertions.*;
 
 import java.util.List;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import racingcar.view.InputView;
 
@@ -26,5 +27,15 @@ public class InputTest {
 
 		assertThat(carsNameList2.contains(answer1)).isEqualTo(true);
 		assertThat(carsNameList2.contains(answer2)).isEqualTo(true);
+	}
+
+	@Test
+	void 자동차_이름_5자_이하() {
+		//given
+		final String carName1 = "car123";
+
+		//then
+		Assertions.assertThrows(IllegalArgumentException.class,
+			() -> new Car(carName1));
 	}
 }
