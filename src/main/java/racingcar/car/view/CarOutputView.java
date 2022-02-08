@@ -1,8 +1,8 @@
-package racingcar.view;
+package racingcar.car.view;
 
-public class OutputView {
+public class CarOutputView {
 
-	private OutputView() {
+	private CarOutputView() {
 	}
 
 	public static void printErrorMessage(IllegalArgumentException IAE) {

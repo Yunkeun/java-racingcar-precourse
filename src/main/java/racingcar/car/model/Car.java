@@ -1,4 +1,4 @@
-package racingcar.model;
+package racingcar.car.model;
 
 import static racingcar.util.ErrorMessage.*;
 

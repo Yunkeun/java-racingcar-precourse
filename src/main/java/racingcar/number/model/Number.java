@@ -1,4 +1,4 @@
-package racingcar.model;
+package racingcar.number.model;
 
 public class Number {
 

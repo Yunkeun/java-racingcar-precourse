@@ -1,17 +1,16 @@
-package racingcar.view;
+package racingcar.car.view;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import racingcar.model.Car;
-import racingcar.model.Number;
+import racingcar.car.model.Car;
 
-public class InputView {
+public class CarInputView {
 
 	private static final String COMMA = ",";
 
-	public InputView() {
+	public CarInputView() {
 	}
 
 	public List<Car> writeCars() {
@@ -19,20 +18,12 @@ public class InputView {
 		try {
 			return carNames.stream().map(Car::new).collect(Collectors.toList());
 		} catch (IllegalArgumentException IAE) {
-			OutputView.printErrorMessage(IAE);
+			CarOutputView.printErrorMessage(IAE);
 			return writeCars();
 		}
 	}
 
 	public List<String> splitName(String carsName) {
 		return Arrays.asList(carsName.split(COMMA));
-	}
-
-	public Number writeNumber() {
-		return new Number(castNumberToInt(Console.readLine()));
-	}
-
-	public int castNumberToInt(String number) {
-		return Integer.parseInt(number);
 	}
 }

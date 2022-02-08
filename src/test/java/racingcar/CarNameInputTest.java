@@ -5,8 +5,8 @@ import static org.assertj.core.api.Assertions.*;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import racingcar.model.Car;
-import racingcar.view.InputView;
+import racingcar.car.model.Car;
+import racingcar.car.view.CarInputView;
 
 public class CarNameInputTest {
 
@@ -15,7 +15,7 @@ public class CarNameInputTest {
 		//given
 		final String answer1 = "car1";
 		final String answer2 = "car2";
-		final InputView inputView = new InputView();
+		final CarInputView inputView = new CarInputView();
 
 		//when
 		final String carsName1 = "car1";
