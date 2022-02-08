@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import racingcar.model.Car;
+import racingcar.model.Number;
 
 public class InputView {
 
@@ -25,5 +26,13 @@ public class InputView {
 
 	public List<String> splitName(String carsName) {
 		return Arrays.asList(carsName.split(COMMA));
+	}
+
+	public Number writeNumber() {
+		return new Number(castNumberToInt(Console.readLine()));
+	}
+
+	public int castNumberToInt(String number) {
+		return Integer.parseInt(number);
 	}
 }
