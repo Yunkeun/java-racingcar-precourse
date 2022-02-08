@@ -9,7 +9,6 @@ import racingcar.model.Car;
 public class InputView {
 
 	private static final String COMMA = ",";
-	private final OutputView outputView = new OutputView();
 
 	public InputView() {
 	}
@@ -19,7 +18,7 @@ public class InputView {
 		try {
 			return carNames.stream().map(Car::new).collect(Collectors.toList());
 		} catch (IllegalArgumentException IAE) {
-			outputView.printErrorMessage(IAE);
+			OutputView.printErrorMessage(IAE);
 			return writeCars();
 		}
 	}
