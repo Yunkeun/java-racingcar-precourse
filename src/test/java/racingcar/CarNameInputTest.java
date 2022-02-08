@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import racingcar.model.Car;
 import racingcar.view.InputView;
 
-public class InputTest {
+public class CarNameInputTest {
 
 	@Test
 	void 자동차_이름_쉼표_구분() {
