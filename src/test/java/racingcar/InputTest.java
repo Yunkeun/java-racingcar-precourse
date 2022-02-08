@@ -39,4 +39,14 @@ public class InputTest {
 		Assertions.assertThrows(IllegalArgumentException.class,
 			() -> new Car(carName1));
 	}
+
+	@Test
+	void 자동차_이름_공백() {
+		//given
+		final String carName = "";
+
+		//then
+		Assertions.assertThrows(IllegalArgumentException.class,
+			() -> new Car(carName));
+	}
 }
