@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import racingcar.car.model.Car;
+import racingcar.util.ErrorMessage;
 
 public class CarInputView {
 
@@ -14,11 +15,11 @@ public class CarInputView {
 	}
 
 	public List<Car> writeCars() {
-		List<String> carNames = splitName(Console.readLine());
+		final List<String> carNames = splitName(Console.readLine());
 		try {
 			return carNames.stream().map(Car::new).collect(Collectors.toList());
 		} catch (IllegalArgumentException IAE) {
-			CarOutputView.printErrorMessage(IAE);
+			ErrorMessage.printErrorMessage(IAE);
 			return writeCars();
 		}
 	}
