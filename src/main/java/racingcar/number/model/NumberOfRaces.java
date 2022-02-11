@@ -1,10 +1,10 @@
 package racingcar.number.model;
 
-public class Number {
+public class NumberOfRaces {
 
 	private final int number;
 
-	public Number(int number) {
+	public NumberOfRaces(int number) {
 		this.number = number;
 	}
 

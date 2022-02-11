@@ -12,8 +12,8 @@ public class Application {
 	public static void main(String[] args) {
 		// TODO 구현 진행
 		final CarController carController = new CarController(new CarInputView(), new CarOutputView());
-		carController.getCars();
+		carController.makeCars();
 		final NumberController numberController = new NumberController(new NumberInputView(), new NumberOutputView());
-		numberController.getNumber();
+		numberController.makeNumberOfRaces();
 	}
 }

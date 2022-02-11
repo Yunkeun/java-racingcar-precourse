@@ -15,8 +15,8 @@ public class CarController {
 		this.carOutputView = carOutputView;
 	}
 
-	public void getCars() {
+	public List<Car> makeCars() {
 		carOutputView.askCarNames();
-		final List<Car> cars = carInputView.writeCars();
+		return carInputView.writeCars();
 	}
 }

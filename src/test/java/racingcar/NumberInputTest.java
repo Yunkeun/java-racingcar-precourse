@@ -3,7 +3,7 @@ package racingcar;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-import racingcar.number.model.Number;
+import racingcar.number.model.NumberOfRaces;
 import racingcar.number.view.NumberInputView;
 
 public class NumberInputTest {
@@ -14,7 +14,7 @@ public class NumberInputTest {
 		final NumberInputView inputView = new NumberInputView();
 		final String numberString = "1";
 		//when
-		final Number number = new Number(inputView.castNumberToInt(numberString));
+		final NumberOfRaces number = new NumberOfRaces(inputView.castNumberToInt(numberString));
 		//then
 		assertThat(number.getNumber()).isEqualTo(1);
 	}

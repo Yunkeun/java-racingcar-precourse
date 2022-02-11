@@ -1,15 +1,15 @@
 package racingcar.number.view;
 
 import camp.nextstep.edu.missionutils.Console;
-import racingcar.number.model.Number;
+import racingcar.number.model.NumberOfRaces;
 
 public class NumberInputView {
 
 	public NumberInputView() {
 	}
 
-	public Number writeNumber() {
-		return new Number(castNumberToInt(Console.readLine()));
+	public NumberOfRaces writeNumber() {
+		return new NumberOfRaces(castNumberToInt(Console.readLine()));
 	}
 
 	public int castNumberToInt(String number) {

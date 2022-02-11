@@ -1,6 +1,6 @@
 package racingcar.number.controller;
 
-import racingcar.number.model.Number;
+import racingcar.number.model.NumberOfRaces;
 import racingcar.number.view.NumberInputView;
 import racingcar.number.view.NumberOutputView;
 
@@ -14,8 +14,8 @@ public class NumberController {
 		this.numberOutputView = numberOutputView;
 	}
 
-	public void getNumber() {
+	public NumberOfRaces makeNumberOfRaces() {
 		numberOutputView.askTryNumber();
-		final Number number = numberInputView.writeNumber();
+		return numberInputView.writeNumber();
 	}
 }
