@@ -2,6 +2,7 @@ package racingcar;
 
 import static org.assertj.core.api.Assertions.*;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import racingcar.number.model.NumberOfRaces;
 import racingcar.number.view.NumberInputView;
@@ -17,5 +18,13 @@ public class NumberInputTest {
 		final NumberOfRaces number = new NumberOfRaces(inputView.castNumberToInt(numberString));
 		//then
 		assertThat(number.getNumber()).isEqualTo(1);
+	}
+
+	@Test
+	void 숫자_예외_테스트() {
+		Assertions.assertThrows(IllegalArgumentException.class,
+			() -> new NumberOfRaces(0));
+		Assertions.assertThrows(IllegalArgumentException.class,
+			() -> new NumberOfRaces(-1));
 	}
 }
