@@ -5,4 +5,6 @@ import racingcar.car.model.Cars;
 public interface CarService {
 
 	void race(Cars cars);
+
+	Cars decideWinner(Cars cars);
 }

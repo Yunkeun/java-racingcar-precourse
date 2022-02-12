@@ -24,8 +24,12 @@ public class CarController {
 			carService.race(cars);
 			carOutputView.printPositions(cars);
 		}
+		carOutputView.printWinners(carService.decideWinner(cars));
 	}
 
+	// Cars 내부에서 만들어서 처리해도 되는데, 그렇게 되면 인자로 들어오는 numberOfRaces가 먼저 생성된다.
+	// public으로 열어 application에서 생성 후 주입시켜주었다.
+	// 더 좋은 방법?? - 1. CarFactory 클래스 생성하여 application에서 생성 후 주입, 2. NumberOfRaces를 controlRace 내부 함수에서 생성 (생성자 주입)
 	public Cars makeCars() {
 		carOutputView.askCarNames();
 		return new Cars(carInputView.writeCars());

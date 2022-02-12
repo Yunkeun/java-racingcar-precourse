@@ -30,4 +30,11 @@ public class Car {
 	public void movePosition() {
 		this.position += 1;
 	}
+
+	public int compareFirstPosition(int firstPosition) {
+		if (position > firstPosition) {
+			firstPosition = position;
+		}
+		return firstPosition;
+	}
 }

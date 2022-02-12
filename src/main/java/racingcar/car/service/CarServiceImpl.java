@@ -15,6 +15,11 @@ public class CarServiceImpl implements CarService {
 		cars.getCars().forEach(this::moveForward);
 	}
 
+	@Override
+	public Cars decideWinner(Cars cars) {
+		return cars.calculateWinners();
+	}
+
 	private void moveForward(Car car) {
 		if (checkMoveForward()) {
 			car.movePosition();
