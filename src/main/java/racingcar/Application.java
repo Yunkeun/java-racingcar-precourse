@@ -1,6 +1,7 @@
 package racingcar;
 
 import racingcar.car.controller.CarController;
+import racingcar.car.service.CarServiceImpl;
 import racingcar.car.view.CarInputView;
 import racingcar.car.view.CarOutputView;
 import racingcar.number.controller.NumberController;
@@ -11,9 +12,8 @@ public class Application {
 
 	public static void main(String[] args) {
 		// TODO 구현 진행
-		final CarController carController = new CarController(new CarInputView(), new CarOutputView());
-		carController.makeCars();
+		final CarController carController = new CarController(new CarInputView(), new CarOutputView(), new CarServiceImpl());
 		final NumberController numberController = new NumberController(new NumberInputView(), new NumberOutputView());
-		numberController.makeNumberOfRaces();
+		carController.controlRace(numberController.makeNumberOfRaces());
 	}
 }
