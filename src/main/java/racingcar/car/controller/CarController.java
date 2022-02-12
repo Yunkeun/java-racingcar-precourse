@@ -18,8 +18,7 @@ public class CarController {
 		this.carService = carService;
 	}
 
-	public void controlRace(NumberOfRaces numberOfRaces) {
-		final Cars cars = makeCars();
+	public void controlRace(Cars cars, NumberOfRaces numberOfRaces) {
 		carOutputView.printResult();
 		for (int i = 0; i < numberOfRaces.getNumber(); i++) {
 			carService.race(cars);
@@ -27,7 +26,7 @@ public class CarController {
 		}
 	}
 
-	private Cars makeCars() {
+	public Cars makeCars() {
 		carOutputView.askCarNames();
 		return new Cars(carInputView.writeCars());
 	}

@@ -14,6 +14,6 @@ public class Application {
 		// TODO 구현 진행
 		final CarController carController = new CarController(new CarInputView(), new CarOutputView(), new CarServiceImpl());
 		final NumberController numberController = new NumberController(new NumberInputView(), new NumberOutputView());
-		carController.controlRace(numberController.makeNumberOfRaces());
+		carController.controlRace(carController.makeCars(), numberController.makeNumberOfRaces());
 	}
 }
